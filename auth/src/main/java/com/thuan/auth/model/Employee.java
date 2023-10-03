@@ -1,12 +1,11 @@
 package com.thuan.auth.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name="employee")
@@ -21,8 +20,10 @@ public class Employee {
     private String email;
     @Column(name="password", length = 255)
     private String password;
+    public Employee() {
+    }
 
-    public Employee(int employeeId, String employeename, String email, String password) {
+    public Employee(int employeeId, String employeeName, String email, String password) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.email = email;

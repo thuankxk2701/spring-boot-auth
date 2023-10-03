@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
-    @PostMapping("/save")
+    @PostMapping("/register")
     public String saveEmployee(@RequestBody EmployeeDTO employeeDTO)
     {
         String id = employeeService.addEmployee(employeeDTO);
